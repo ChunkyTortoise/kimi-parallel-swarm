@@ -1,0 +1,33 @@
+{
+  "moonshot_api_key": "",
+  "moonshot_base_url": "https://api.moonshot.cn/v1",
+  "moonshot_model": "kimi-k2.5",
+  "airtable_api_key": "",
+  "airtable_base_id": "",
+  "linkedin_email": "",
+  "linkedin_password": "",
+  "phantombuster_api_key": "",
+  "openai_api_key": "",
+  "sendgrid_api_key": "",
+  "reddit_client_id": "",
+  "reddit_client_secret": "",
+  "reddit_user_agent": "KimiAgent/1.0",
+  "user_name": "",
+  "user_title": "AI Engineer | Analytics for SaaS",
+  "linkedin_profile_url": "",
+  "niche_allocation": {
+    "saas": 0.7,
+    "agency": 0.3
+  },
+  "daily_limits": {
+    "connections": 20,
+    "messages": 20,
+    "reddit_comments": 10
+  },
+  "safety": {
+    "min_delay_seconds": 300,
+    "max_delay_seconds": 900,
+    "weekly_connection_limit": 100
+  },
+  "quality_threshold": 7.0
+}

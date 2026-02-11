@@ -1,0 +1,15 @@
+{
+  "template_name": "LinkedIn SaaS Outreach",
+  "version": "1.0",
+  "tone": "professional",
+  "structure": {
+    "opening": "Hi {{first_name}},",
+    "hook": "I noticed {{company_name}} is scaling its {{department}} team. Most SaaS companies at your stage struggle with {{pain_point}}.",
+    "value_prop": "We helped {{similar_company}} reduce {{metric}} by {{percentage}}% in {{timeframe}}.",
+    "cta": "Worth a brief conversation?",
+    "signoff": "Best,\n{{sender_name}}"
+  },
+  "variables": ["first_name", "company_name", "department", "pain_point", "similar_company", "metric", "percentage", "timeframe", "sender_name"],
+  "max_length": 300,
+  "platform": "linkedin"
+}

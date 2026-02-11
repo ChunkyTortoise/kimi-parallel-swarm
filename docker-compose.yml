@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  kimi-agent:
+    build: .
+    container_name: kimi-outreach-agent
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./.env:/app/.env:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Optional: Web dashboard for monitoring
+  dashboard:
+    build: .
+    container_name: kimi-dashboard
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: python3 dashboard.py
+    profiles:
+      - dashboard

@@ -1,0 +1,15 @@
+{
+  "template_name": "LinkedIn Agency Outreach",
+  "version": "1.0",
+  "tone": "professional",
+  "structure": {
+    "opening": "Hi {{first_name}},",
+    "hook": "Saw {{company_name}}'s recent work with {{client_type}} - impressive growth.",
+    "value_prop": "We specialize in helping agencies like yours scale {{service_area}} without adding headcount. {{case_study}} saw {{result}}.",
+    "cta": "Open to a quick chat about your {{quarter}} goals?",
+    "signoff": "Cheers,\n{{sender_name}}"
+  },
+  "variables": ["first_name", "company_name", "client_type", "service_area", "case_study", "result", "quarter", "sender_name"],
+  "max_length": 300,
+  "platform": "linkedin"
+}

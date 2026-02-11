@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Data and logs (keep structure, ignore content)
+data/*.json
+data/*.log
+data/daily_reports/*.json
+data/daily_reports/*.csv
+!data/.gitkeep
+
+# Config (keep example, ignore actual)
+config/settings.json
+!config/settings.json
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Docker
+.dockerignore
+
+# Backups
+backups/*.tar.gz
+
+# System files
+*.pid
+*.sock
+nohup.out
