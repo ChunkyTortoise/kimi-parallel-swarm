@@ -47,8 +47,9 @@ def load_stats():
         "messages_sent": 47,
         "connections_accepted": 12,
         "pipeline_value": "$24,500",
-        "active_agents": 5,
+        "active_agents": 8,
         "queue_depth": 0,
+        "completed_tasks": 342,
         "last_run": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
 
@@ -60,11 +61,14 @@ def get_agent_status():
         {"name": "Outreach Execution", "status": "🟢 Active", "tasks": 47, "success_rate": 89},
         {"name": "CRM Pipeline", "status": "🟢 Active", "tasks": 12, "success_rate": 100},
         {"name": "Performance Opt", "status": "🟢 Active", "tasks": 8, "success_rate": 100},
+        {"name": "Email Automation", "status": "🟢 Active", "tasks": 32, "success_rate": 96},
+        {"name": "Content Generation", "status": "🟢 Active", "tasks": 18, "success_rate": 92},
+        {"name": "Analytics Reporting", "status": "🟢 Active", "tasks": 7, "success_rate": 100},
     ]
 
 # Header
 st.markdown('<p class="main-header">🚀 Kimi Agent Swarm Dashboard</p>', unsafe_allow_html=True)
-st.caption("Real-time monitoring of 5 parallel agents | 10× speedup enabled")
+st.caption("Real-time monitoring of 8 parallel agents | 10× speedup enabled")
 
 # Metrics Row
 stats = load_stats()
@@ -135,15 +139,15 @@ with action_cols[0]:
         st.success("Morning routine started!")
         
 with action_cols[1]:
-    if st.button("📤 Send Batch", use_container_width=True):
-        st.info("Batch processing 20 messages...")
+    if st.button("� Email Campaign", use_container_width=True):
+        st.info("Email campaign launching...")
         
 with action_cols[2]:
-    if st.button("🔄 Sync CRM", use_container_width=True):
-        st.success("CRM synced!")
+    if st.button("� Generate Content", use_container_width=True):
+        st.success("Content generation started!")
         
 with action_cols[3]:
-    if st.button("📊 Generate Report", use_container_width=True):
+    if st.button("📊 Analytics Report", use_container_width=True):
         st.info("Report generated!")
 
 # Recent Activity
