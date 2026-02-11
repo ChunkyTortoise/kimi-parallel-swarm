@@ -20,6 +20,9 @@ class AgentType(Enum):
     OUTREACH_EXECUTION = "outreach_execution"
     CRM_PIPELINE = "crm_pipeline"
     PERFORMANCE_OPTIMIZATION = "performance_optimization"
+    EMAIL_AUTOMATION = "email_automation"
+    CONTENT_GENERATION = "content_generation"
+    ANALYTICS_REPORTING = "analytics_reporting"
 
 
 @dataclass
@@ -325,19 +328,32 @@ class AgentSwarmOrchestrator:
         from agents.outreach_execution_agent import OutreachExecutionAgent
         from agents.crm_pipeline_agent import CRMPipelineAgent
         from agents.performance_optimization_agent import PerformanceOptimizationAgent
+        from agents.email_automation_agent import EmailAutomationAgent
+        from agents.content_generation_agent import ContentGenerationAgent
+        from agents.analytics_reporting_agent import AnalyticsReportingAgent
         
-        # Initialize agents
+        # Initialize original 5 agents
         self.agents[AgentType.ICP_RESEARCH] = ICPResearchAgent(self.config)
         self.agents[AgentType.COPY_GENERATION] = CopyGenerationAgent(self.config)
         self.agents[AgentType.OUTREACH_EXECUTION] = OutreachExecutionAgent(self.config)
         self.agents[AgentType.CRM_PIPELINE] = CRMPipelineAgent(self.config)
         self.agents[AgentType.PERFORMANCE_OPTIMIZATION] = PerformanceOptimizationAgent(self.config)
         
+        # Initialize 3 new agents
+        self.agents[AgentType.EMAIL_AUTOMATION] = EmailAutomationAgent(
+            sendgrid_api_key=self.config.get("sendgrid_api_key"),
+            sender_email=self.config.get("sender_email")
+        )
+        self.agents[AgentType.CONTENT_GENERATION] = ContentGenerationAgent(
+            moonshot_api_key=self.config.get("moonshot_api_key")
+        )
+        self.agents[AgentType.ANALYTICS_REPORTING] = AnalyticsReportingAgent()
+        
         # Register with swarm
         for agent_type, agent in self.agents.items():
             self.swarm.register_agent(agent_type, agent)
         
-        logger.info("All agents initialized and registered")
+        logger.info("All 8 agents initialized and registered")
     
     async def execute_morning_routine_parallel(self) -> Dict[str, Any]:
         """
